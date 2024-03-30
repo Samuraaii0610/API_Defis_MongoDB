@@ -1,0 +1,65 @@
+### Inscription d'un nouvel utilisateur
+
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "pseudo": "pamurai",
+    "password": "admin",
+    "role": "administrator"
+}
+
+### Connexion d'un utilisateur
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "pseudo": "vincent",
+    "password": "vincentlegaymasque"
+}
+
+### Récupération d'un défi aléatoire
+
+GET http://localhost:3000/api/defis/random
+
+### Récupération de plusieurs défis aléatoires
+
+GET http://localhost:3000/api/defis/randoms/3
+
+### Ajout d'un nouveau défi
+
+POST http://localhost:3000/api/defis
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjA1OTM0MTM3NzIxZTg4YjRmNjAyYTQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxMTgxMjEzN30.VpfcU-2_fUpmu6z_mfGxUveiUMjPVI61f6ynBwP-JvY
+
+{
+    "titre": "test",
+    "description": "je ne suis pas admin",
+    "difficulte": "difficile",
+    "points": 50,
+    "categorie": "Planète",
+    "dateCreation": "2024-03-28"
+}
+
+
+### Modification d'un défi existant
+
+PUT http://localhost:3000/api/defis/66082c93f2caf768f968f778
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjA1OTM0MTM3NzIxZTg4YjRmNjAyYTQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxMTgxMjEzN30.VpfcU-2_fUpmu6z_mfGxUveiUMjPVI61f6ynBwP-JvY
+
+{
+    "titre": "encore test",
+    "description": "je suis toujours pas admin",
+    "difficulte": "facile",
+    "points": 2,
+    "categorie": "Consommation",
+    "dateCreation": "2024-03-26"
+}
+
+
+### Suppression d'un défi
+
+DELETE http://localhost:3000/api/defis/66082c3669b1895339a07b31
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjA1OTM0MTM3NzIxZTg4YjRmNjAyYTQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxMTgxMjEzN30.VpfcU-2_fUpmu6z_mfGxUveiUMjPVI61f6ynBwP-JvY
